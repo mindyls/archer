@@ -77,7 +77,7 @@ def archer4_visir(image, attrib, first_guess, para_fix=True, display_filename=No
                 image['lon_grid'], image['lat_grid'], first_guess['time'])
 
             # Sun must be >1.5 degrees above horizon for that conversion to make sense
-            cos_solar_zenith_grid[cos_solar_zenith_grid < 0.0262] = np.NaN
+            cos_solar_zenith_grid[cos_solar_zenith_grid < 0.0262] = np.nan
 
             # Convert to pseudo brightness temp for Archer to act on
             bv_norm = image['data_grid'] / cos_solar_zenith_grid**0.5
@@ -170,7 +170,7 @@ def archer4_visir(image, attrib, first_guess, para_fix=True, display_filename=No
             print('Computing center-fix on cloud-masked image (w/o parallax fix) ...')
             in_dict['lon_mx'] = image['lon_grid']
             in_dict['lat_mx'] = image['lat_grid']
-            in_dict['bt_mx'][in_dict['bt_mx'] < mask_val] = np.NaN
+            in_dict['bt_mx'][in_dict['bt_mx'] < mask_val] = np.nan
 
 
             # With IR imagery, we have to consider pixels with partial clouds/convection.
@@ -193,7 +193,7 @@ def archer4_visir(image, attrib, first_guess, para_fix=True, display_filename=No
                         box = in_dict['bt_mx'][box_min_row:box_max_row, box_min_col:box_max_col]
 
                         if np.any(np.isnan(box)):
-                            out_mx[row_idx, col_idx] = np.NaN
+                            out_mx[row_idx, col_idx] = np.nan
 
                 in_dict['bt_mx'] = out_mx
 
