@@ -16,10 +16,12 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 plt.close('all')
 
-matplotlib.rcParams['axes.titlesize'] = 10
-matplotlib.rcParams['axes.labelsize'] = 10
-matplotlib.rcParams['legend.fontsize'] = 10
-matplotlib.rcParams['font.size'] = 10
+ARCHER_RC_PARAMS = {
+    'axes.titlesize': 10,
+    'axes.labelsize': 10,
+    'legend.fontsize': 10,
+    'font.size': 10,
+}
 
 import numpy as np
 #from importlib import reload
@@ -68,6 +70,7 @@ def discrete_cmap(N, base_cmap=None):
     return base.from_list(cmap_name, color_list, N)
 
 
+@matplotlib.rc_context(ARCHER_RC_PARAMS)
 def plot_diag_3panel(image, attrib, in_dict, out_dict, score_dict, display_filename=None):
 
 

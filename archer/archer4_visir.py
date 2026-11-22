@@ -9,11 +9,6 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 plt.close('all')
 
-matplotlib.rcParams['axes.titlesize'] = 10
-matplotlib.rcParams['axes.labelsize'] = 10
-matplotlib.rcParams['legend.fontsize'] = 10
-matplotlib.rcParams['font.size'] = 10
-
 import numpy as np
 import os, sys
 import time
